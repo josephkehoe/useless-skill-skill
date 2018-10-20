@@ -6,7 +6,7 @@ class UselessSkill(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
         self.id="mud"
-    @intent_handler(IntentBuilder("").require("skill.useless").require("Identity"))
+    @intent_handler(IntentBuilder("").require("skill.useless").require("Identity").build())
     def handle_skill_useless(self, message):
         id=message.data.get("Identity")
         self.speak_dialog('skill.useless',{"Name":id})
